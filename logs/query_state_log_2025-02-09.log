@@ -163,3 +163,588 @@ KeyError: 'node_history'
 }
 2025-02-09 13:02:51,907 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
 2025-02-09 13:02:51,907 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:22,477 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:35:26,169 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143520",
+  "user_input": "do you have credit cards"
+}
+2025-02-09 14:35:26,169 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:26,169 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:31,081 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:35:39,888 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:35:43,476 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:43,476 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:43,477 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:45,291 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:45,292 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:45,293 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:47,371 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:47,372 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:47,372 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:49,082 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:49,082 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:49,082 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:51,006 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:51,006 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:51,006 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:52,581 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:52,581 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:52,581 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:55,864 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:55,864 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:55,864 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:57,605 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:57,605 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:57,605 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:35:59,661 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:35:59,662 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:35:59,663 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:01,296 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143537",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:36:01,296 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:36:01,296 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:04,557 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:36:36,310 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:36:40,517 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143634",
+  "user_input": "Are there any specific eligibility requirements for credit cards?"
+}
+2025-02-09 14:36:40,518 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:36:40,518 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:42,057 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143634",
+  "user_input": "Are there any specific eligibility requirements for credit cards?"
+}
+2025-02-09 14:36:42,057 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:36:42,058 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:43,591 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143634",
+  "user_input": "Are there any specific eligibility requirements for credit cards?"
+}
+2025-02-09 14:36:43,591 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:36:43,592 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:45,119 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143634",
+  "user_input": "Are there any specific eligibility requirements for credit cards?"
+}
+2025-02-09 14:36:45,119 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:36:45,119 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:46,525 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143634",
+  "user_input": "Are there any specific eligibility requirements for credit cards?"
+}
+2025-02-09 14:36:46,526 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:36:46,526 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:48,096 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209143634",
+  "user_input": "Are there any specific eligibility requirements for credit cards?"
+}
+2025-02-09 14:36:48,097 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:36:48,097 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:36:53,443 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:41:19,995 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:41:27,439 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:42:17,039 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:42:20,895 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:20,895 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:20,895 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:22,435 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:22,436 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:22,436 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:23,878 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:23,878 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:23,879 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:25,816 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:25,817 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:25,817 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:27,423 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:27,423 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:27,424 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:29,087 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:29,087 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:29,087 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:30,527 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:30,528 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:30,528 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:31,951 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:31,951 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:31,952 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:33,601 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:33,602 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:33,602 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:35,032 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "13e7e36a-ad9c-4e0f-ae49-ee57894449b7",
+  "conversation_id": "sdsdsd_13e7e36a-ad9c-4e0f-ae49-ee57894449b7_20250209144215",
+  "user_input": "What are the benefits of KCB credit cards?"
+}
+2025-02-09 14:42:35,033 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 14:42:35,033 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:42:38,503 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:44:24,063 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:44:27,767 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "0b1e53f5-309e-46d8-870a-1ee5581ba8af",
+  "conversation_id": "sdsdsd_0b1e53f5-309e-46d8-870a-1ee5581ba8af_20250209144422",
+  "user_input": "how to apply for mortage"
+}
+2025-02-09 14:44:30,806 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 14:44:30,807 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:44:39,989 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:47:40,583 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:47:44,076 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "0b1e53f5-309e-46d8-870a-1ee5581ba8af",
+  "conversation_id": "sdsdsd_0b1e53f5-309e-46d8-870a-1ee5581ba8af_20250209144738",
+  "user_input": "how to apply for mortage"
+}
+2025-02-09 14:47:47,490 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 14:47:47,491 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:47:55,990 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:49:34,351 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:49:44,284 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:51:05,590 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:51:08,966 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "f90aef58-fb97-46e1-aaea-d22b5ab2ba21",
+  "conversation_id": "sdsdsd_f90aef58-fb97-46e1-aaea-d22b5ab2ba21_20250209145103",
+  "user_input": "Hoe many branches do you have"
+}
+2025-02-09 14:51:11,783 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 14:51:11,783 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:51:17,058 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:54:11,397 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 14:54:15,187 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "8991a749-cfab-4d21-825e-fd078baf1765",
+  "conversation_id": "sdsdsd_8991a749-cfab-4d21-825e-fd078baf1765_20250209145409",
+  "user_input": "ANy branch in Nairobi?"
+}
+2025-02-09 14:54:18,823 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 14:54:18,823 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 14:54:25,681 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:11:25,926 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:11:26,502 - QueryStateLogger - INFO - No conversations found for user_id: test_user
+2025-02-09 15:11:29,022 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "test_user",
+  "session_id": "f31abfe9-d563-4f99-82fd-19c16b237f5d",
+  "conversation_id": "test_user_f31abfe9-d563-4f99-82fd-19c16b237f5d_20250209151124",
+  "user_input": "Do you have credit cards"
+}
+2025-02-09 15:11:32,134 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 15:11:32,135 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 15:11:38,994 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:14:12,269 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:14:20,167 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:23:14,607 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:23:19,603 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:26:53,457 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:26:59,588 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:29:57,118 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:30:00,298 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "test_user",
+  "session_id": "5ab0cbaa-2998-4f0d-b136-ec6c7e557529",
+  "conversation_id": "test_user_5ab0cbaa-2998-4f0d-b136-ec6c7e557529_20250209152955",
+  "user_input": "What types of mortgages does KCB Bank offer?"
+}
+2025-02-09 15:30:03,146 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 15:30:03,146 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 15:30:11,148 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:35:52,569 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 15:35:55,826 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "test_user",
+  "session_id": "5ab0cbaa-2998-4f0d-b136-ec6c7e557529",
+  "conversation_id": "test_user_5ab0cbaa-2998-4f0d-b136-ec6c7e557529_20250209153550",
+  "user_input": "What is the application process for a KCB Bank mortgage?"
+}
+2025-02-09 15:35:59,655 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 15:35:59,656 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 15:36:11,196 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:32:33,347 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:32:41,634 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:32:57,206 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:33:04,425 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:33:22,043 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:33:32,124 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:33:52,122 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:34:52,514 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:34:56,026 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:35:13,910 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:36:55,524 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:40:14,045 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:45:04,862 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:48:24,542 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:49:07,243 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:50:35,617 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:50:38,303 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:52:34,667 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:52:46,593 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:52:48,922 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:52:51,203 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:52:53,475 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:52:55,525 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:52:58,546 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:54:13,420 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:54:16,890 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:55:18,245 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:55:20,902 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:55:23,808 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:55:26,226 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:55:29,298 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:55:32,657 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:08,196 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:08,678 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 19:58:10,545 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:12,730 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:15,544 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:16,160 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 19:58:18,111 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:20,880 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:24,059 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:58:24,591 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 19:59:22,051 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 19:59:22,546 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 19:59:24,332 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:01:02,566 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:01:05,534 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:01:06,066 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:01:07,852 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:01:08,400 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:01:11,389 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:01:11,985 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:01:23,554 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:01:24,169 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:08:59,478 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:08:59,959 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:09:19,618 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:20,152 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:09:21,741 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:22,179 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:09:24,041 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:24,534 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:09:34,465 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:37,664 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:38,154 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:09:39,795 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:40,241 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:09:41,892 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:43,947 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:09:50,034 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:10:06,377 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:10:09,785 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:10:10,260 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:10:12,069 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:10:12,564 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:10:14,706 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:10:17,266 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:10:58,785 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:10:59,249 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:11:01,092 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:11:08,976 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:11:16,248 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:11:58,228 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:11:58,843 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:12:00,619 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:12:35,720 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:12:36,232 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:12:38,032 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:12:38,478 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:12:42,444 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:12:46,124 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:12:46,578 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:12:48,280 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:12:48,724 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:12:50,553 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:12:52,944 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:14:01,064 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:14:01,628 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:14:03,460 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:14:03,988 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:16:05,985 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:16:06,542 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:16:08,490 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:16:12,277 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:16:15,655 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:16:16,373 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:16:18,256 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:16:18,718 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:16:20,468 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:16:22,732 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:16:29,321 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:18:28,364 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:18:28,978 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:18:31,027 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:18:31,557 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:48:19,925 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:48:20,539 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:52:45,758 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:52:48,973 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:52:49,445 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:52:51,391 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:52:54,053 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:52:54,668 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 20:52:56,746 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 20:53:01,889 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:11,614 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:12,228 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:00:14,133 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:22,101 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:22,674 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:00:29,636 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:32,811 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:33,425 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:00:35,255 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:35,713 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:00:37,624 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:39,876 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:00:46,738 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:06:30,683 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:06:32,085 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:06:33,882 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:06:49,163 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:06:49,610 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:06:51,242 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:06:53,538 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:06:54,152 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:06:55,943 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:07:00,950 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:07:22,722 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:07:23,337 - QueryStateLogger - ERROR - Error retrieving chat sessions: column "content" does not exist
+LINE 8:                         SELECT content 
+                                       ^
+
+2025-02-09 21:07:25,077 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:40:35,277 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:40:35,849 - QueryStateLogger - INFO - No conversations found for user_id: default_user
+2025-02-09 21:40:40,353 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:40:42,956 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:40:47,523 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:44:37,310 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:44:43,114 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:47:23,814 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 21:47:29,121 - QueryStateLogger - INFO - Successfully connected to database: ai_agents

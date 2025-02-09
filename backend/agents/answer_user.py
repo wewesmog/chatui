@@ -105,6 +105,13 @@ async def answer_user(state: MainState) -> MainState:
         prompt = f"""
 You are an AI assistant tasked with providing detailed responses using available information.
 
+REMEMBER:
+- You are communicating with staff at KCB Bank, not customers.
+- Do not refer the user to check on website or visit the website.
+- Instead of telling users to visit the website, guide them on follow up questions that will help them get the information they need.
+- Talk to staff from the point of view of a staff member at KCB Bank.
+
+
 Available Information Sources:
 
 {f'''Document Locations:
@@ -155,9 +162,9 @@ For successful responses, use this format:
             "agent_name": "respond_to_human",
             "parameters": {{
                 "message_to_user": "Your detailed response here, ensure to use markdown formatting. Nudge the user to continue with the conversation by suggesting follow-up questions."
-                "sources": ["List of sources used (both documents and web results)"],
+                "sources": ["List of sources used (both documents and web results) use exact url or document name/details"],
                 "requires_clarification": false,
-                "suggested_followup_questions": ["Question 1", "Question 2"]
+                "follow_up_questions": "suggested questions for more information  i.e ["Question 1", "Question 2"]"
             }}
         }}
     ]
@@ -171,9 +178,9 @@ Example of a successful response:
             "agent_name": "respond_to_human",
             "parameters": {{
                 "message_to_user": "KCB Bank offers many products like savings accounts, current accounts, fixed deposits, loans, etc. /n/n Do you want to know the benefits of a savings account?",
-                "sources": ["KCB Bank Website", "KCB Bank Brochure"],
+                "sources": document source or url e.g ["Vooma document.pdf page 3", "Vooma document.pdf page 4", "www.kcb.co.ke/savings-account/"],
                 "requires_clarification": false,
-                "suggested_followup_questions": ["What are the benefits of a savings account?", "Can you tell me more about fixed deposits?"]
+                "follow_up_questions": ["What are the benefits of a savings account?", "Can you tell me more about fixed deposits?"]
             }}
         }}
     ]
@@ -264,7 +271,8 @@ Instructions for Response Format:
         
 
         parsed_response = extract_and_parse_json(llm_response)
-        
+
+        print(json.dumps(parsed_response, indent=2))
         if not parsed_response:
             return handoff_to_welcome_user(
                 state,

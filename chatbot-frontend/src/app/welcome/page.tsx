@@ -1,72 +1,125 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import ChatHistory from '@/components/ChatHistory'
 
 export default function WelcomePage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [message, setMessage] = useState('')
   const router = useRouter()
-  const nickname = typeof window !== 'undefined' ? localStorage.getItem('nickname') : null
+  const [nickname, setNickname] = useState('')
+  const [question, setQuestion] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const storedNickname = localStorage.getItem('nickname')
+    if (!storedNickname) {
+      router.push('/')
+    } else {
+      setNickname(storedNickname)
+    }
+  }, [router])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (message.trim()) {
-      router.push(`/chat?message=${encodeURIComponent(message)}`)
+    if (!question.trim()) return
+
+    setIsLoading(true)
+    try {
+      const sessionId = crypto.randomUUID()
+      const ws = new WebSocket(`ws://localhost:8000/ws/${sessionId}`)
+      
+      await new Promise((resolve, reject) => {
+        ws.onopen = resolve
+        ws.onerror = reject
+      })
+
+      ws.send(JSON.stringify({
+        user_id: nickname,
+        user_input: question,
+        session_id: sessionId,
+        type: 'message'
+      }))
+
+      ws.close()
+      router.push(`/chat?session=${sessionId}`)
+    } catch (error) {
+      console.error('Error starting chat:', error)
+      alert('Failed to start chat. Please try again.')
+    } finally {
+      setIsLoading(false)
     }
   }
 
   return (
-    <div className="h-screen flex">
-      {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} w-64 bg-white shadow-lg transition-transform duration-300 ease-in-out z-20`}>
-        <div className="p-4">
-          <button onClick={() => setSidebarOpen(false)} className="float-right">
-            <XMarkIcon className="h-6 w-6" />
-          </button>
-          <div className="mt-8">
-            <h3 className="text-lg font-semibold">Chat History</h3>
-            {/* Chat history will go here */}
-          </div>
-          <div className="mt-8">
-            <h3 className="text-lg font-semibold">Settings</h3>
-            {/* Settings will go here */}
-          </div>
-        </div>
-      </div>
-
-      {/* Main content */}
-      <div className="flex-1 flex flex-col">
-        <header className="bg-white shadow-sm">
+    <div className="min-h-screen bg-gray-900">
+      <ChatHistory isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      
+      <div className="flex flex-col h-screen">
+        <header className="bg-gray-800 shadow">
           <div className="flex items-center p-4">
-            <button onClick={() => setSidebarOpen(true)} className="mr-4">
-              <Bars3Icon className="h-6 w-6" />
+            <button 
+              onClick={() => setSidebarOpen(true)}
+              className="text-gray-300 hover:text-white"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
-            <h1 className="text-xl font-semibold">Welcome, {nickname || 'Guest'}</h1>
           </div>
         </header>
 
-        <main className="flex-1 p-6 flex flex-col items-center justify-center">
-          <div className="max-w-2xl w-full space-y-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold">How can I help you today?</h2>
-              <p className="mt-2 text-gray-600">Ask me anything!</p>
-            </div>
-
+        <main className="flex-1 flex items-center justify-center p-4">
+          <div className="max-w-2xl w-full">
+            <h1 className="text-4xl font-bold text-white text-center mb-8">
+              How can I help you today?
+            </h1>
+            <p className="text-gray-400 text-center mb-8">
+              Ask me anything!
+            </p>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Type your message here..."
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-              />
+              <div>
+                <label htmlFor="question" className="sr-only">
+                  What would you like to know?
+                </label>
+                <textarea
+                  id="question"
+                  rows={4}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg 
+                           text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 
+                           focus:border-transparent resize-none"
+                  value={question}
+                  onChange={(e) => setQuestion(e.target.value)}
+                  placeholder="Ask me anything..."
+                  disabled={isLoading}
+                />
+              </div>
               <button
                 type="submit"
-                className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                disabled={isLoading || !question.trim()}
+                className={`w-full py-3 px-4 rounded-lg text-white font-medium
+                         ${isLoading || !question.trim() 
+                           ? 'bg-gray-600 cursor-not-allowed' 
+                           : 'bg-blue-600 hover:bg-blue-700'} 
+                         transition-colors duration-200`}
               >
-                Send Message
+                {isLoading ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" 
+                         xmlns="http://www.w3.org/2000/svg" 
+                         fill="none" 
+                         viewBox="0 0 24 24"
+                    >
+                      <circle className="opacity-25" cx="12" cy="12" r="10" 
+                              stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" 
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Starting Chat...
+                  </span>
+                ) : (
+                  'Start Chat'
+                )}
               </button>
             </form>
           </div>

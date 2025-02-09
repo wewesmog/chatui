@@ -24,23 +24,23 @@ def get_unanalyzed_handoffs(state: MainState, agent_name: str) -> List[Dict[str,
 
             content = entry["content"]
             
-            # Handle agent handoffs
-            if "agents" in content:
-                for agent in content["agents"]:
+            # Handle tool calls
+            if content.get("response_type") == "tool_call":
+                for tool in content.get("tools", []):
                     if (
-                        #get "agent_name" or "agent"    
+                        tool.get("tool") == agent_name and
+                        not tool.get("analyzed", False)
+                    ):
+                        handoff_parameters.append(tool.get("parameters", {}))
+                        
+            # Handle agent handoffs
+            elif content.get("response_type") == "handoff":
+                for agent in content.get("agents", []):
+                    if (
                         (agent.get("agent_name") == agent_name or agent.get("agent") == agent_name) and
-                        (not agent.get("analyzed", False))  # Either no analyzed field or analyzed is False
+                        not agent.get("analyzed", False)
                     ):
                         handoff_parameters.append(agent.get("parameters", {}))
-
-            # Handle tool calls
-            elif (
-                content.get("response_type") == "tool_call" and
-                content.get("tool") == agent_name and
-                (not content.get("analyzed", False))  # Either no analyzed field or analyzed is False
-            ):
-                handoff_parameters.append(content.get("parameters", {}))
                         
         logger.info(f"Found {len(handoff_parameters)} unanalyzed handoffs for {agent_name}")
         return handoff_parameters
@@ -51,7 +51,7 @@ def get_unanalyzed_handoffs(state: MainState, agent_name: str) -> List[Dict[str,
 
 def mark_handoffs_as_analyzed(state: MainState, agent_name: str) -> MainState:
     """
-    Mark all handoffs for a specific agent as analyzed in node_history
+    Mark all handoffs for a specific agent/tool as analyzed in node_history
     """
     try:
         if "node_history" not in state or not state["node_history"]:
@@ -59,13 +59,25 @@ def mark_handoffs_as_analyzed(state: MainState, agent_name: str) -> MainState:
             return state
 
         for entry in state["node_history"]:
-            if (
-                isinstance(entry.get("content"), dict) and
-                "agents" in entry["content"]
-            ):
-                for agent in entry["content"]["agents"]:
+            if not isinstance(entry.get("content"), dict):
+                continue
+
+            content = entry["content"]
+            
+            # Mark tool calls as analyzed
+            if content.get("response_type") == "tool_call":
+                for tool in content.get("tools", []):
+                    if tool.get("tool") == agent_name and not tool.get("analyzed"):
+                        tool["analyzed"] = {
+                            "timestamp": datetime.now(timezone.utc).isoformat(),
+                            "analyzed_by": agent_name
+                        }
+                        logger.info(f"Marked tool call as analyzed for {agent_name}")
+                        
+            # Mark agent handoffs as analyzed
+            elif content.get("response_type") == "handoff":
+                for agent in content.get("agents", []):
                     if (
-                        #get "agent_name" or "agent"    
                         (agent.get("agent_name") == agent_name or agent.get("agent") == agent_name) and
                         not agent.get("analyzed")
                     ):

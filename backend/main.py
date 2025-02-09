@@ -28,6 +28,7 @@ from backend.agents.respond_to_human import respond_to_human
 from backend.tools.extract_docs_tool import extract_docs_tool
 from backend.tools.tavily_tool import tavily_tool
 
+from backend.services.session_service import get_chat_sessions, get_session_by_id
 
 # Configure logging to show more details
 logging.basicConfig(
@@ -217,7 +218,7 @@ async def run_chat_flow(state: MainState) -> MainState:
             logger.info(f"Starting new conversation: {state['conversation_id']}")
         
         logger.info(f"Starting chat flow for session {state['session_id']}")
-        max_steps = 20  # Prevent infinite loops
+        max_steps = 200000000  # Prevent infinite loops
         steps_taken = 0
         
         state = await welcome_user(state)
@@ -419,12 +420,29 @@ async def end_session(session_id: str):
         logger.error(f"Error ending session: {str(e)}")
         return {"status": "error", "message": str(e)}
 
+@app.get("/api/chat-sessions")
+async def get_user_chat_sessions(user_id: str = "test_user"):
+    """Get all chat sessions for a user"""
+    sessions = get_chat_sessions(user_id)
+    return JSONResponse(content={"sessions": sessions})
+
+@app.get("/api/chat-sessions/{session_id}")
+async def get_chat_session(session_id: str):
+    """Get a specific chat session"""
+    session = get_session_by_id(session_id)
+    if session:
+        return JSONResponse(content=session)
+    return JSONResponse(
+        content={"error": "Session not found"},
+        status_code=404
+    )
 
 if __name__ == "__main__":
     uvicorn.run(
-        app,
+        "backend.main:app",  # Changed from app to module path
         host="0.0.0.0",
         port=8000,
         log_level="debug",
-        reload=True  # Enable auto-reload for development
+        reload=True,
+        reload_dirs=["backend"]  # Add explicit reload directory
     )

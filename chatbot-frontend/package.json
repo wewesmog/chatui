@@ -15,10 +15,15 @@
     "@supabase/supabase-js": "^2.48.1",
     "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-markdown": "^8.0.7",
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

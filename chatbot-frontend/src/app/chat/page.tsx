@@ -1,243 +1,275 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { useSearchParams } from 'next/navigation'
+import React, { useEffect, useRef, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Message from './Message'
+import ChatHistory from '@/components/ChatHistory'
+import { Message as ChatMessage } from '@/types/chat'
+import { sessionService } from '@/services/sessionService'
 
-interface Message {
-  type: 'user' | 'bot' | 'error'
-  content: string
+interface WebSocketMessage {
+  type: 'message' | 'connection_status'
+  message?: string
+  formatted_message?: string
   sources?: string[]
   follow_up_questions?: string[]
-  timestamp: string
 }
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>([])
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const sessionId = searchParams.get('session')
+  const [messages, setMessages] = useState<ChatMessage[]>([])
   const [input, setInput] = useState('')
-  const [isConnected, setIsConnected] = useState(false)
+  const [isConnecting, setIsConnecting] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const searchParams = useSearchParams()
-  const wsRef = useRef<WebSocket | null>(null)
-  const sessionId = useRef<string>(crypto.randomUUID())
+  const ws = useRef<WebSocket | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const reconnectAttempts = useRef(0)
+  const maxReconnectAttempts = 3
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   useEffect(() => {
     scrollToBottom()
   }, [messages])
 
-  useEffect(() => {
-    const ws = new WebSocket(`ws://localhost:8000/ws/${sessionId.current}`)
-    wsRef.current = ws
-
-    ws.onopen = () => {
-      setIsConnected(true)
-      setError(null)
-      console.log('WebSocket Connected')
-      
-      const initialMessage = searchParams.get('message')
-      if (initialMessage) {
-        sendMessage(initialMessage)
-      }
-    }
-
-    ws.onmessage = (event) => {
-      try {
-        const data = JSON.parse(event.data)
-        console.log("Received WebSocket data:", data) // Debug log
-        if (data.type === "connection_status") {
-          console.log("Connection status:", data.content)
-          return
-        }
-        setMessages(prev => [...prev, {
-          type: 'bot',
-          content: data.message,
-          sources: data.sources || [],
-          follow_up_questions: data.follow_up_questions || [],
-          timestamp: new Date().toISOString()
-        }])
-      } catch (error) {
-        console.error('Error parsing message:', error)
-        setMessages(prev => [...prev, {
-          type: 'error',
-          content: 'Error processing response',
-          timestamp: new Date().toISOString()
-        }])
-      }
-    }
-
-    ws.onerror = () => {
-      const errorMessage = 'Connection error. Please try again.'
-      setError(errorMessage)
-      setIsConnected(false)
-    }
-
-    ws.onclose = () => {
-      const closeMessage = 'Connection closed. Please refresh the page.'
-      setIsConnected(false)
-      setError(closeMessage)
-    }
-
-    return () => {
-      ws.close()
-    }
-  }, [searchParams])
-
-  const handleFollowUpClick = (question: string) => {
-    console.log("Follow-up question clicked:", question) // Debug log
-    setInput(question)
-    sendMessage(question)
-  }
-
-  const sendMessage = async (messageContent: string) => {
+  const connectWebSocket = () => {
     try {
-      if (!isConnected) {
-        throw new Error('Unable to connect to chat service')
+      if (!sessionId) return
+      
+      // Close existing connection if any
+      if (ws.current) {
+        ws.current.close(1000, 'Reconnecting')
       }
 
-      setMessages(prev => [...prev, {
-        type: 'user',
-        content: messageContent,
-        timestamp: new Date().toISOString()
-      }])
+      ws.current = new WebSocket(`ws://localhost:8000/ws/${sessionId}`)
 
-      if (wsRef.current?.readyState === WebSocket.OPEN) {
-        wsRef.current.send(JSON.stringify({
-          user_id: localStorage.getItem('nickname') || 'anonymous',
-          user_input: messageContent,
-          session_id: sessionId.current
-        }))
-        setInput('')
-      } else {
-        throw new Error('Chat service connection lost. Please refresh the page.')
+      ws.current.onopen = () => {
+        console.log('WebSocket connected for session:', sessionId)
+        setIsConnecting(false)
+        setError(null)
+        reconnectAttempts.current = 0
+      }
+
+      ws.current.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data)
+          
+          if (data.type === 'message') {
+            setMessages(prev => [...prev, {
+              role: 'assistant',
+              content: data.message,
+              sources: data.sources,
+              follow_up_questions: data.follow_up_questions
+            }])
+            setIsLoading(false)
+          }
+        } catch (error) {
+          console.error('Error parsing message:', error)
+          setIsLoading(false)
+        }
+      }
+
+      ws.current.onclose = (event) => {
+        console.log('WebSocket closed:', event)
+        setIsConnecting(true)
+        
+        // Attempt to reconnect if not closed intentionally
+        if (!event.wasClean && reconnectAttempts.current < maxReconnectAttempts) {
+          const timeout = Math.min(1000 * Math.pow(2, reconnectAttempts.current), 10000)
+          console.log(`Reconnecting in ${timeout}ms...`)
+          
+          setTimeout(() => {
+            reconnectAttempts.current += 1
+            connectWebSocket()
+          }, timeout)
+        } else if (reconnectAttempts.current >= maxReconnectAttempts) {
+          setError('Unable to connect to chat server. Please refresh the page.')
+        }
+      }
+
+      ws.current.onerror = (error) => {
+        console.error('WebSocket error:', error)
+        // Don't set error immediately, let the onclose handler handle reconnection
+        if (reconnectAttempts.current >= maxReconnectAttempts) {
+          setError('Connection error. Please check your internet connection and try again.')
+        }
       }
     } catch (error) {
-      const userFriendlyError = error instanceof Error 
-        ? error.message 
-        : 'Something went wrong. Please try again.'
-      setError(userFriendlyError)
+      console.error('Error setting up WebSocket:', error)
+      setError('Failed to connect to chat server')
+      setIsLoading(false)
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Effect to handle session changes
+  useEffect(() => {
+    if (!sessionId) {
+      router.push('/welcome')
+      return
+    }
+
+    setError(null)
+    reconnectAttempts.current = 0
+
+    // Only load existing messages if we're viewing history
+    // (messages array will already be populated for new chats)
+    if (messages.length === 0) {
+      const loadExistingMessages = async () => {
+        try {
+          const session = await sessionService.getSession(sessionId)
+          if (session && session.messages) {
+            setMessages(session.messages)
+          }
+        } catch (error) {
+          console.error('Error loading messages:', error)
+          setError('Failed to load chat history')
+        }
+      }
+      loadExistingMessages()
+    }
+
+    connectWebSocket()
+
+    return () => {
+      if (ws.current) {
+        ws.current.close(1000, 'Component unmounting or session changing')
+      }
+    }
+  }, [sessionId, router, messages.length])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (input.trim()) {
-      sendMessage(input)
-    }
+    if (!input.trim() || !ws.current || ws.current.readyState !== WebSocket.OPEN) return
+
+    const newMessage = { role: 'user', content: input }
+    setMessages(prev => [...prev, newMessage])
+    setInput('')
+    setIsLoading(true)
+
+    ws.current.send(JSON.stringify({
+      user_id: localStorage.getItem('nickname'),
+      user_input: input,
+      session_id: sessionId
+    }))
   }
 
-  return (
-    <div className="h-screen flex">
-      {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} w-64 bg-white shadow-lg transition-transform duration-300 ease-in-out z-20`}>
-        <div className="p-4">
-          <button onClick={() => setSidebarOpen(false)} className="float-right">
-            <XMarkIcon className="h-6 w-6" />
-          </button>
-          <div className="mt-8">
-            <h3 className="text-lg font-semibold">Chat History</h3>
-            {/* Chat history will go here */}
+  const renderMessage = (message: ChatMessage, index: number) => (
+    <div key={index} 
+         className={`mb-4 p-4 rounded-lg ${
+           message.role === 'user' 
+             ? 'bg-blue-600 ml-auto max-w-[80%]' 
+             : 'bg-gray-800 mr-auto max-w-[80%]'
+         }`}
+    >
+      <p className="text-white">{message.content}</p>
+      {message.sources && message.sources.length > 0 && (
+        <div className="mt-2 text-sm text-gray-300">
+          <p className="font-semibold">Sources:</p>
+          <ul className="list-disc list-inside">
+            {message.sources.map((source, idx) => (
+              <li key={idx}>{source}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {message.follow_up_questions && message.follow_up_questions.length > 0 && (
+        <div className="mt-2">
+          <p className="text-sm font-semibold text-gray-300">Follow-up questions:</p>
+          <div className="flex flex-wrap gap-2 mt-1">
+            {message.follow_up_questions.map((question, idx) => (
+              <button
+                key={idx}
+                className="text-sm px-3 py-1 rounded-full bg-gray-700 text-gray-300 hover:bg-gray-600"
+                onClick={() => {/* Handle follow-up question */}}
+              >
+                {question}
+              </button>
+            ))}
           </div>
         </div>
-      </div>
+      )}
+    </div>
+  )
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+  return (
+    <div className="min-h-screen bg-gray-900">
+      <ChatHistory isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      
+      <div className="flex flex-col h-screen">
         {/* Header */}
-        <header className="bg-white shadow-sm">
+        <header className="bg-gray-800 shadow">
           <div className="flex items-center p-4">
-            <button onClick={() => setSidebarOpen(true)} className="mr-4">
-              <Bars3Icon className="h-6 w-6" />
+            <button 
+              onClick={() => setSidebarOpen(true)}
+              className="text-gray-300 hover:text-white"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
-            <h1 className="text-xl font-semibold">Chat</h1>
           </div>
         </header>
 
         {/* Error Banner */}
         {error && (
-          <div className="bg-red-50 p-4 border-l-4 border-red-400">
-            <div className="flex">
-              <div className="flex-shrink-0">
-                <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="ml-3">
-                <p className="text-sm text-red-700">{error}</p>
-              </div>
-            </div>
+          <div className="bg-red-500 text-white px-4 py-2">
+            <p>{error}</p>
+            <button 
+              onClick={() => {
+                setError(null)
+                reconnectAttempts.current = 0
+                connectWebSocket()
+              }}
+              className="text-sm underline hover:no-underline ml-2"
+            >
+              Try again
+            </button>
           </div>
         )}
 
-        {/* Chat Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {messages.map((message, index) => (
-            <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[70%] ${message.type === 'user' ? 'items-end' : 'items-start'}`}>
-                {/* Message Content */}
-                <div className={`rounded-lg p-3 ${
-                  message.type === 'user'
-                    ? 'bg-blue-500 text-white'
-                    : message.type === 'error'
-                    ? 'bg-red-100 text-red-700'
-                    : 'bg-gray-200 text-gray-800'
-                }`}>
-                  {message.content}
-                </div>
-
-                {/* Sources */}
-                {message.type === 'bot' && message.sources && message.sources.length > 0 && (
-                  <div className="text-sm text-gray-600 mt-2">
-                    <div className="font-semibold mb-1">Sources:</div>
-                    {message.sources.map((source, idx) => (
-                      <div key={idx} className="ml-2">• {source}</div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Follow-up Questions */}
-                {message.type === 'bot' && message.follow_up_questions && message.follow_up_questions.length > 0 && (
-                  <div className="text-sm mt-4">
-                    <div className="font-semibold mb-2">Suggested Questions:</div>
-                    <div className="flex flex-col gap-2">
-                      {message.follow_up_questions.map((question, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => handleFollowUpClick(question)}
-                          className="text-left text-blue-600 hover:text-blue-800 hover:underline ml-2 py-1 px-2 rounded cursor-pointer"
-                        >
-                          • {question}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+        {/* Chat content */}
+        <div className="flex-1 overflow-y-auto p-4">
+          {isLoading ? (
+            <div className="flex justify-center items-center h-full">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
             </div>
-          ))}
+          ) : (
+            messages.map((message, index) => renderMessage(message, index))
+          )}
           <div ref={messagesEndRef} />
         </div>
 
         {/* Input Form */}
-        <form onSubmit={handleSubmit} className="border-t p-4">
-          <div className="flex space-x-4">
+        <form onSubmit={handleSubmit} className="p-4 border-t border-gray-800">
+          <div className="max-w-4xl mx-auto flex gap-4">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your message..."
-              className="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-              disabled={!isConnected}
+              className="flex-1 p-2 bg-gray-800 border border-gray-700 rounded-lg 
+                       text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
+              disabled={isLoading}
             />
             <button
               type="submit"
-              disabled={!isConnected}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
+              disabled={isLoading || !input.trim()}
+              className={`px-4 py-2 rounded-lg text-white font-medium
+                       ${isLoading || !input.trim() 
+                         ? 'bg-gray-600 cursor-not-allowed' 
+                         : 'bg-blue-600 hover:bg-blue-700'}`}
             >
               Send
             </button>
