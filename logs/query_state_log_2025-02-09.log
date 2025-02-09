@@ -1,0 +1,165 @@
+2025-02-09 10:46:59,580 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 10:47:00,195 - QueryStateLogger - INFO - No conversations found for user_id: sdsdsd, session_id: 759776db-4213-472a-ad59-90eaf3e0242d, conversation_id: sdsdsd_759776db-4213-472a-ad59-90eaf3e0242d_20250209104657
+2025-02-09 10:47:03,781 - QueryStateLogger - ERROR - Error in tavily_tool: 'is_first_question'
+Traceback (most recent call last):
+  File "/home/wes/Documents/chatui/backend/tools/tavily_tool.py", line 26, in tavily_tool
+    "is_first_question": state["is_first_question"]
+                         ~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'is_first_question'
+2025-02-09 10:47:03,782 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 10:47:03,782 - QueryStateLogger - INFO - Handing off to welcome_user due to error: No content provided
+2025-02-09 10:47:03,782 - QueryStateLogger - ERROR - No handoff parameters found for respond_to_human
+2025-02-09 10:47:05,520 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 10:47:05,521 - QueryStateLogger - ERROR - Error saving conversation: Object of type ConnectionManager is not JSON serializable
+2025-02-09 10:49:31,057 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 10:49:31,649 - QueryStateLogger - INFO - No conversations found for user_id: sdsdsd
+2025-02-09 10:49:34,392 - QueryStateLogger - ERROR - Error in tavily_tool: 'is_first_question'
+Traceback (most recent call last):
+  File "/home/wes/Documents/chatui/backend/tools/tavily_tool.py", line 26, in tavily_tool
+    "is_first_question": state["is_first_question"]
+                         ~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'is_first_question'
+2025-02-09 10:49:34,394 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 10:49:34,394 - QueryStateLogger - INFO - Handing off to welcome_user due to error: No content provided
+2025-02-09 10:49:34,395 - QueryStateLogger - ERROR - No handoff parameters found for respond_to_human
+2025-02-09 10:49:36,298 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 10:54:38,109 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 10:54:41,500 - QueryStateLogger - ERROR - Error in tavily_tool: name 'tavily_search' is not defined
+2025-02-09 10:54:41,500 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 10:54:41,501 - QueryStateLogger - ERROR - Error in answer_user: 'node_history'
+Traceback (most recent call last):
+  File "/home/wes/Documents/chatui/backend/agents/answer_user.py", line 89, in answer_user
+    return handoff_to_welcome_user(state, "No content provided", response_id, "answer_user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wes/Documents/chatui/backend/agents/answer_user.py", line 292, in handoff_to_welcome_user
+    state["node_history"].append({
+    ~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'node_history'
+2025-02-09 11:00:56,592 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:00:59,648 - QueryStateLogger - ERROR - Error in tavily_tool: search_tavily() got an unexpected keyword argument 'comprehensive_question'
+2025-02-09 11:00:59,648 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:00:59,648 - QueryStateLogger - ERROR - Error in answer_user: 'node_history'
+Traceback (most recent call last):
+  File "/home/wes/Documents/chatui/backend/agents/answer_user.py", line 89, in answer_user
+    return handoff_to_welcome_user(state, "No content provided", response_id, "answer_user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wes/Documents/chatui/backend/agents/answer_user.py", line 292, in handoff_to_welcome_user
+    state["node_history"].append({
+    ~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'node_history'
+2025-02-09 11:03:10,101 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:03:19,146 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 11:03:19,146 - QueryStateLogger - ERROR - Error in tavily_tool: object list can't be used in 'await' expression
+2025-02-09 11:03:19,154 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:03:19,155 - QueryStateLogger - ERROR - Error in answer_user: 'node_history'
+Traceback (most recent call last):
+  File "/home/wes/Documents/chatui/backend/agents/answer_user.py", line 89, in answer_user
+    return handoff_to_welcome_user(state, "No content provided", response_id, "answer_user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wes/Documents/chatui/backend/agents/answer_user.py", line 292, in handoff_to_welcome_user
+    state["node_history"].append({
+    ~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'node_history'
+2025-02-09 11:13:50,019 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:13:52,901 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "5a0630f5-5f67-4ff2-b0b1-d584c6bd181d",
+  "conversation_id": "sdsdsd_5a0630f5-5f67-4ff2-b0b1-d584c6bd181d_20250209111348",
+  "user_input": "tell me about loana"
+}
+2025-02-09 11:13:56,164 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 11:13:56,164 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:17:28,242 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:17:31,525 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "33e468cf-4613-48fa-9694-f1e549283540",
+  "conversation_id": "sdsdsd_33e468cf-4613-48fa-9694-f1e549283540_20250209111726",
+  "user_input": "tell me about loans"
+}
+2025-02-09 11:17:34,490 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 11:17:34,491 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:18:43,405 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:18:45,768 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "1825e0cf-2751-4810-b648-61f7ae8e15c8",
+  "conversation_id": "sdsdsd_1825e0cf-2751-4810-b648-61f7ae8e15c8_20250209111841",
+  "user_input": "tell me about loans"
+}
+2025-02-09 11:18:47,912 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 11:18:47,913 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:18:57,844 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:32:27,602 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:32:31,234 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "85bd98be-b879-44b3-bfb5-c52573e543ba",
+  "conversation_id": "sdsdsd_85bd98be-b879-44b3-bfb5-c52573e543ba_20250209113225",
+  "user_input": "tell me about mortages"
+}
+2025-02-09 11:32:34,916 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 11:32:34,917 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:32:46,894 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:39:49,757 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:39:53,096 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "4d64d59c-3a65-43bf-9a6b-1224fd18dc7f",
+  "conversation_id": "sdsdsd_4d64d59c-3a65-43bf-9a6b-1224fd18dc7f_20250209113947",
+  "user_input": "tell me about mortages"
+}
+2025-02-09 11:39:56,015 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 11:39:56,015 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:40:06,097 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:45:04,876 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:45:08,085 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "cdd72d90-70a8-4154-a1e7-b232fe0f7051",
+  "conversation_id": "sdsdsd_cdd72d90-70a8-4154-a1e7-b232fe0f7051_20250209114503",
+  "user_input": "tell me about mortages"
+}
+2025-02-09 11:45:11,458 - QueryStateLogger - INFO - Successfully retrieved 2 results from Tavily
+2025-02-09 11:45:11,459 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:45:23,939 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:57:25,126 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:59:05,207 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 11:59:13,510 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "a2ebb642-b069-49eb-a59f-cc860f5a73a3",
+  "conversation_id": "sdsdsd_a2ebb642-b069-49eb-a59f-cc860f5a73a3_20250209115903",
+  "user_input": "what loans do you offer"
+}
+2025-02-09 11:59:13,510 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 11:59:13,510 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 11:59:13,510 - QueryStateLogger - INFO - Handing off to welcome_user due to error: No relevant information found
+2025-02-09 11:59:13,511 - QueryStateLogger - ERROR - No handoff parameters found for respond_to_human
+2025-02-09 11:59:15,485 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:02:26,103 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:02:32,272 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "9709ae1f-ebd5-4b67-8cc0-6fa23dccc5ef",
+  "conversation_id": "sdsdsd_9709ae1f-ebd5-4b67-8cc0-6fa23dccc5ef_20250209120224",
+  "user_input": "what loans are available"
+}
+2025-02-09 12:02:32,272 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 12:02:32,272 - QueryStateLogger - INFO - Completed tavily_tool
+2025-02-09 12:02:32,272 - QueryStateLogger - INFO - Handing off to welcome_user due to error: No relevant information found
+2025-02-09 12:02:32,272 - QueryStateLogger - ERROR - No handoff parameters found for respond_to_human
+2025-02-09 12:02:34,311 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:33:19,791 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:37:48,479 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:40:26,847 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:45:10,647 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:48:17,557 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:53:45,367 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:53:50,475 - QueryStateLogger - ERROR - No handoff parameters found for respond_to_human
+2025-02-09 12:53:52,367 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:59:26,932 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 12:59:32,438 - QueryStateLogger - ERROR - No handoff parameters found for respond_to_human
+2025-02-09 12:59:34,373 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 13:02:47,598 - QueryStateLogger - INFO - Successfully connected to database: ai_agents
+2025-02-09 13:02:51,907 - QueryStateLogger - INFO - tavily_tool started with state: {
+  "user_id": "sdsdsd",
+  "session_id": "6c4f7021-2423-4a34-9930-08dfe05ce20e",
+  "conversation_id": "sdsdsd_6c4f7021-2423-4a34-9930-08dfe05ce20e_20250209130245",
+  "user_input": "do you have credit cards?"
+}
+2025-02-09 13:02:51,907 - QueryStateLogger - INFO - No unanalyzed handoffs found for tavily_tool
+2025-02-09 13:02:51,907 - QueryStateLogger - INFO - Completed tavily_tool
